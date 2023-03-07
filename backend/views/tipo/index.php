@@ -30,9 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'area_id',
                     'value' => 'area.nome_area'
                 ],
-//                'created_at:datetime',
+                'numero_consultas_dia',
+//                'created_at',
 //                'created_by',
                 // 'updated_at',
+
 
                 ['class' => 'yii\grid\ActionColumn'],
             ],

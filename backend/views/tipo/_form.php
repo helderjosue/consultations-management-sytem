@@ -25,9 +25,11 @@ use yii\widgets\ActiveForm;
 
         <?= $form->field($model, 'updated_at')->hiddenInput()->label(false) ?>
 
+        <?= $form->field($model, 'numero_consultas_dia')->textInput(['type' => 'number']) ?>
+
     </div>
     <div class="box-footer">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-flat float-right rounded']) ?>
+        <?= Html::submitButton('Salvar', ['class' => 'btn btn-success btn-flat float-right rounded']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 </div>

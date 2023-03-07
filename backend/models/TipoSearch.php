@@ -18,7 +18,7 @@ class TipoSearch extends Tipo
     public function rules()
     {
         return [
-            [['id', 'area_id', 'created_by'], 'integer'],
+            [['id', 'area_id', 'created_by', 'numero_consultas_dia'], 'integer'],
             [['nome', 'created_at', 'updated_at'], 'safe'],
         ];
     }
@@ -65,6 +65,7 @@ class TipoSearch extends Tipo
             'created_at' => $this->created_at,
             'created_by' => $this->created_by,
             'updated_at' => $this->updated_at,
+            'numero_consultas_dia' => $this->numero_consultas_dia,
         ]);
 
         $query->andFilterWhere(['like', 'nome', $this->nome]);

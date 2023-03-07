@@ -14,9 +14,11 @@ use Yii;
  * @property string $created_at
  * @property int|null $created_by
  * @property string|null $updated_at
+ * @property int $numero_consultas_dia
  *
  * @property Area $area
  * @property User $createdBy
+ * @property Medico[] $medicos
  */
 class Tipo extends \yii\db\ActiveRecord
 {
@@ -34,8 +36,8 @@ class Tipo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'area_id', 'created_at'], 'required', 'message' => 'Este campo é obrigatório'],
-            [['area_id', 'created_by'], 'integer'],
+            [['nome', 'area_id', 'created_at', 'numero_consultas_dia'], 'required', 'message' => 'Este campo é obrigatório'],
+            [['area_id', 'created_by', 'numero_consultas_dia'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
             [['nome'], 'string', 'max' => 255],
             [['area_id'], 'exist', 'skipOnError' => true, 'targetClass' => Area::class, 'targetAttribute' => ['area_id' => 'id']],
@@ -55,6 +57,7 @@ class Tipo extends \yii\db\ActiveRecord
             'created_at' => 'Data de Registo',
             'created_by' => 'Created By',
             'updated_at' => 'Updated At',
+            'numero_consultas_dia' => 'Número de consultas por dia',
         ];
     }
 
@@ -76,5 +79,15 @@ class Tipo extends \yii\db\ActiveRecord
     public function getCreatedBy()
     {
         return $this->hasOne(User::class, ['id' => 'created_by']);
+    }
+
+    /**
+     * Gets query for [[Medicos]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getMedicos()
+    {
+        return $this->hasMany(Medico::class, ['tipo_id' => 'id']);
     }
 }

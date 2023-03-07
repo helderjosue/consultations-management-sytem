@@ -2,7 +2,14 @@
 
 /** @var yii\web\View $this */
 
-$this->title = 'Dashboard';
+use backend\models\Area;
+use backend\models\Consulta;
+use backend\models\Medico;
+use backend\models\Paciente;
+use backend\models\Tipo;
+use yii\helpers\Html;
+
+$this->title = 'Visão Geral';
 ?>
 <section class="content">
     <div class="container-fluid">
@@ -12,13 +19,13 @@ $this->title = 'Dashboard';
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>45</h3>
+                        <h3><?php echo Medico::find()->count(); ?></h3>
                         <p>Total de Medicos</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Detalhes <i class="fas fa-arrow-circle-right"></i></a>
+                    <?php echo Html::a('Detalhes', ['/medico/index'], ['class' => 'small-box-footer']) ?>
                 </div>
             </div>
             <!-- ./col -->
@@ -26,14 +33,14 @@ $this->title = 'Dashboard';
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>20</h3>
+                        <h3><?php echo Consulta::find()->count(); ?></h3>
 
                         <p>Total de Consultas</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Detalhes <i class="fas fa-arrow-circle-right"></i></a>
+                    <?php echo Html::a('Detalhes', ['/consulta/index'], ['class' => 'small-box-footer']) ?>
                 </div>
             </div>
             <!-- ./col -->
@@ -41,14 +48,14 @@ $this->title = 'Dashboard';
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>44</h3>
-
+                        <h3><?php echo Paciente::find()->count(); ?></h3>
                         <p>Total de Pacientes</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Detalhes <i class="fas fa-arrow-circle-right"></i></a>
+                    <?php echo Html::a('Detalhes', ['/paciente/index'], ['class' => 'small-box-footer']) ?>
+
                 </div>
             </div>
             <!-- ./col -->
@@ -56,14 +63,27 @@ $this->title = 'Dashboard';
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3>30</h3>
-
-                        <p>Total de Pagamentos</p>
+                        <h3><?php echo Area::find()->count(); ?></h3>
+                        <p>Áreas Médicas</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
                     </div>
-                    <a href="#" class="small-box-footer">Detalhes <i class="fas fa-arrow-circle-right"></i></a>
+                    <?php echo Html::a('Detalhes', ['/area/index'], ['class' => 'small-box-footer']) ?>
+                </div>
+            </div>
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h3><?php echo Tipo::find()->count(); ?></h3>
+
+                        <p>Tipos de Médicos</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    <?php echo Html::a('Detalhes', ['/tipo/index'], ['class' => 'small-box-footer']) ?>
                 </div>
             </div>
             <!-- ./col -->

@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'created_at:datetime',
                 'created_by',
                 'updated_at:datetime',
+                'numero_consultas_dia',
             ],
         ]) ?>
     </div>

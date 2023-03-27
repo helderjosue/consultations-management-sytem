@@ -1,24 +1,26 @@
 <p align="center">
     <h1 align="center">Clinical Appointment Scheduling Management System</h1>
     <br>
+    <p align="center"> Its a web application to help Health Facilities to schedule and manage patients clinical appointments. 
+    <br>
+    Currently the application only allows medical appointments to be scheduled from the health unit, but in versions
+ later, the system will allow scheduling to be done remotely.
+    </p>
+
 </p>
 
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
+This application is in its initial phase and currently has the following features:
 
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
 
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
+       1. Register Patients
+       2. Register Doctors
+       3. Register Medical Areas
+       4. Register Types of Doctors
+       5. Dashboard
+       
+This application was built in PHP using Yii Framework and follows the directory structure bellow:
 
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
-
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-advanced.svg)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![build](https://github.com/yiisoft/yii2-app-advanced/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-app-advanced/actions?query=workflow%3Abuild)
-
-DIRECTORY STRUCTURE
+APPLICATION DIRECTORY STRUCTURE
 -------------------
 
 ```
@@ -55,3 +57,11 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+HOW TO INSTALL AND TEST
+1. Clone the project repository
+2. Follow the [Yii Advanced Template installation](https://www.yiiframework.com/extension/yiisoft/yii2-app-advanced/doc/guide/2.0/en/start-installation) process based on your Operating System 
+3. Run ``` php init ``` to choose how environment to run the application.
+ 3.1 If you are experienced with Yii2, select 0 [Development env]
+ 3.2 If you are a starter with Yii2, select 1 [Production env]
+4. Create a database and name it how you prefer.
+5. Update the following file:

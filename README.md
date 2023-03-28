@@ -69,7 +69,7 @@ HOW TO INSTALL AND TEST
 5. Update the following file: ```common/config/main-local.php``` with your MYSQL local credentials and the database name created previously.<br>
 Eg:<br>
 ```
-'db' => 
+'db' => [
             'class' => \yii\db\Connection::class,
             'dsn' => 'mysql:host=localhost;dbname=test_db',
             'username' => 'root',
@@ -78,7 +78,7 @@ Eg:<br>
         ],
 ```
 6. Run ```php yii migrate```
-7. Restore the following [database Dump file](google.com) to use demo data.
+7. Restore the following [database Dump file](https://www.google.com) to use demo data.
 8. Access your Backend Url (created on step 2), and use the following credentials to login: <br> 
 ```
 Username: demo 

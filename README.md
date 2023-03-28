@@ -57,11 +57,31 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+
 HOW TO INSTALL AND TEST
+-------------------
 1. Clone the project repository
 2. Follow the [Yii Advanced Template installation](https://www.yiiframework.com/extension/yiisoft/yii2-app-advanced/doc/guide/2.0/en/start-installation) process based on your Operating System 
-3. Run ``` php init ``` to choose how environment to run the application.
- 3.1 If you are experienced with Yii2, select 0 [Development env]
+3. Run ``` php init ``` to choose how environment to run the application. <br>
+ 3.1 If you are experienced with Yii2, select 0 [Development env]<br>
  3.2 If you are a starter with Yii2, select 1 [Production env]
 4. Create a database and name it how you prefer.
-5. Update the following file:
+5. Update the following file: ```common/config/main-local.php``` with your MYSQL local credentials and the database name created previously.<br>
+Eg:<br>
+```
+'db' => 
+            'class' => \yii\db\Connection::class,
+            'dsn' => 'mysql:host=localhost;dbname=test_db',
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+        ],
+```
+6. Run ```php yii migrate```
+7. Restore the following [database Dump file](google.com) to use demo data.
+8. Access your Backend Url (created on step 2), and use the following credentials to login: <br> 
+```
+Username: demo 
+Password: demo@1234 
+```
+9. Happy testing!
